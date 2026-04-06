@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* ===== Neo-Brutalist Design System ===== */
+@theme {
+  /* Colors — exact from itsthatlady.dev */
+  --color-bg: #e8ecf1;
+  --color-bg-dark: #d4dae3;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-accent-green: #B4F481;
+  --color-accent-green-dark: #22c55e;
+  --color-accent-pink: #FF90E8;
+  --color-accent-blue: #74C0FC;
+  --color-accent-yellow: #FFCC00;
+  --color-accent-purple: #c4b5fd;
+  --color-border: #000000;
+
+  /* Fonts */
+  --font-heading: 'Alexandria', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-logo: 'Kablammo', system-ui;
+
+  /* Shadows — hard Neo-Brutalist offsets */
+  --shadow-neo: 4px 4px 0px #000000;
+  --shadow-neo-sm: 3px 3px 0px #000000;
+  --shadow-neo-hover: 8px 8px 0px #000000;
+  --shadow-neo-lg: 6px 6px 0px #000000;
+
+  /* Animation */
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 30s linear infinite;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-soft: pulseSoft 2s ease-in-out infinite;
+}
+
+/* ===== Keyframes ===== */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ===== Base ===== */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent-green);
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ===== Neo-Brutalist Components ===== */
+.neo-card {
+  background: var(--color-surface);
+  border: 2.5px solid var(--color-border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-neo);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neo-card:hover {
+  box-shadow: var(--shadow-neo-hover);
+  transform: translate(-4px, -4px);
+}
+
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-neo);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.neo-btn:hover {
+  box-shadow: var(--shadow-neo-hover);
+  transform: translate(-4px, -4px);
+}
+
+.neo-btn-primary {
+  background-color: var(--color-accent-green);
+  color: #000;
+}
+
+.neo-btn-dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.neo-btn-outline {
+  background-color: transparent;
+  color: #000;
+}
+
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Section Spacing ===== */
+.section-padding {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+}
+
