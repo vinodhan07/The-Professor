@@ -30,7 +30,7 @@ export default function Navigation() {
               <a
                 key={link.label}
                 href={link.href}
-                className={`font-heading font-semibold text-sm px-5 py-2.5 rounded-lg border-2 border-transparent bg-transparent text-text transition-all duration-200 hover:bg-surface hover:border-border ${link.shadowColor}`}
+                className={`font-heading font-semibold text-sm px-5 py-2.5 rounded-lg border-2 border-transparent bg-transparent text-text transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:bg-surface hover:border-border ${link.shadowColor}`}
               >
                 {link.label}
               </a>

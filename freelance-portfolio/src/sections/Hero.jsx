@@ -2,7 +2,7 @@ import heroImg from '../assets/vinodhan.png';
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-[calc(100vh-6rem)] flex items-center pt-4 pb-0 relative">
+    <section id="hero" className="min-h-[calc(100vh-6rem)] flex items-center pt-4 pb-0 relative -mb-8">
       <div className="max-w-[90rem] mx-auto px-6 lg:px-12 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           
@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="pt-2 flex justify-center lg:justify-start">
               <a 
                 href="#contact" 
-                className="inline-flex items-center gap-2 bg-accent-green border-2 border-border rounded-lg px-6 py-3.5 font-heading font-bold text-base shadow-[4px_4px_0px_#000] transition-all duration-300 hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] active:shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px]"
+                className="inline-flex items-center gap-2 bg-accent-green border-2 border-border rounded-lg px-6 py-3.5 font-heading font-bold text-base shadow-[4px_4px_0px_#000] transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] active:shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px]"
               >
                 Book a Call
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -29,29 +29,28 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ===== Right — BIG photo, properly aligned ===== */}
-          <div className="w-full lg:w-[42%] flex justify-center lg:justify-end order-1 lg:order-2 lg:pr-4">
-            <div className="relative group cursor-pointer pb-12">
-              
-              {/* Blue card backdrop — smaller than photo */}
+          {/* ===== Right — Photo inside card with shadow on right ===== */}
+          <div className="w-full lg:w-[42%] flex justify-center lg:justify-end order-1 lg:order-2 lg:pr-8">
+            <div className="relative group cursor-pointer" style={{ width: '320px', height: '440px' }}>
+              {/* Blue card — person is placed INSIDE this */}
               <div 
-                className="absolute bottom-12 left-1/2 -translate-x-1/2 rounded-[1.8rem] border-[3px] border-border bg-gradient-to-br from-[#74C0FC] via-[#93d4fc] to-[#b3e0fd] shadow-[6px_6px_0px_#000] transition-all duration-300 group-hover:shadow-[12px_12px_0px_#000] group-hover:-translate-x-1/2 group-hover:-translate-y-[3px]"
-                style={{ width: '260px', height: '280px' }}
-              />
-              
-              {/* Photo — BIG, overflows the card */}
-              <div className="relative z-10 w-[340px] md:w-[370px] lg:w-[380px] overflow-hidden rounded-b-[2rem]">
+                className="absolute rounded-[1.6rem] bg-gradient-to-br from-[#74C0FC] via-[#93d4fc] to-[#b3e0fd] border-border shadow-[3px_3px_0px_#000] flex items-end justify-center transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[3px] hover:-translate-y-[3px] cursor-pointer"
+                style={{ width: '270px', height: '290px', top: '30px', left: '15px' }}
+              >
+                {/* Person image — contained INSIDE the blue card, no shadow */}
                 <img 
                   src={heroImg} 
                   alt="Vinodhan V.A" 
-                  className="w-full h-auto object-cover drop-shadow-[0_8px_20px_rgba(0,0,0,0.12)] transition-all duration-300 group-hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)] group-hover:-translate-y-2"
+                  className="w-full object-cover object-top rounded-b-[1.5rem]"
+                  style={{ height: '350px', marginTop: '-100px' }}
                 />
               </div>
+                
 
-              {/* Floating Icon — Laptop (top-left) */}
+              {/* Floating Icon — Laptop (top-left, overlapping card edge) */}
               <div 
-                className="absolute -top-2 -left-2 z-20 w-14 h-14 bg-accent-pink border-[3px] border-border rounded-2xl shadow-[3px_3px_0px_#000] flex items-center justify-center animate-float transition-all duration-300 hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[3px] hover:-translate-y-[3px] cursor-pointer"
-                style={{ animationDelay: '0s' }}
+                className="absolute z-20 w-14 h-14 bg-accent-pink border-[3px] border-border rounded-2xl shadow-[3px_3px_0px_#000] flex items-center justify-center transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[3px] hover:-translate-y-[3px] cursor-pointer"
+                style={{ top: '30px', left: '-5px', animationDelay: '0s' }}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -59,10 +58,10 @@ export default function Hero() {
                 </svg>
               </div>
 
-              {/* Floating Icon — Code </> (right) */}
+              {/* Floating Icon — Code </> (right, mid-height) */}
               <div 
-                className="absolute top-[45%] -right-2 z-20 w-14 h-14 bg-accent-yellow border-[3px] border-border rounded-full shadow-[3px_3px_0px_#000] flex items-center justify-center animate-float transition-all duration-300 hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[3px] hover:-translate-y-[3px] cursor-pointer"
-                style={{ animationDelay: '1.5s' }}
+                className="absolute z-20 w-14 h-14 bg-accent-yellow border-[3px] border-border rounded-full shadow-[3px_3px_0px_#000] flex items-center justify-center transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[3px] hover:-translate-y-[3px] cursor-pointer"
+                style={{ top: '180px', right: '-15px', animationDelay: '1.5s' }}
               >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="16 18 22 12 16 6"/>
@@ -70,8 +69,11 @@ export default function Hero() {
                 </svg>
               </div>
 
-              {/* "Hey! I'm Vinodhan" badge — moved up slightly to cover edge better */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 bg-accent-green border-[3px] border-border rounded-full px-5 py-2.5 shadow-[3px_3px_0px_#000] whitespace-nowrap flex items-center gap-2.5 transition-all duration-300 hover:shadow-[8px_8px_0px_#000] hover:-translate-y-[3px]">
+              {/* "Hey! I'm Vinodhan" badge — at bottom of card */}
+              <div 
+                className="absolute left-1/2 -translate-x-1/2 z-20 bg-accent-green border-[3px] border-border rounded-full px-5 py-2.5 shadow-[3px_3px_0px_#000] whitespace-nowrap flex items-center gap-2.5 transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-y-[3px]"
+                style={{ bottom: '50px' }}
+              >
                 <span className="w-6 h-6 bg-surface border-2 border-border rounded-full flex items-center justify-center">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="16 18 22 12 16 6"/>
@@ -93,7 +95,7 @@ export default function Hero() {
         href="https://wa.me/919566697301" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-[#25D366] border-2 border-border rounded-full shadow-[4px_4px_0px_#000] flex items-center justify-center transition-all duration-300 hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px]"
+        className="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-[#25D366] border-2 border-border rounded-full shadow-[4px_4px_0px_#000] flex items-center justify-center transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px]"
         aria-label="Contact on WhatsApp"
       >
         <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">

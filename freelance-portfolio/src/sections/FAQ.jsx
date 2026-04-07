@@ -35,7 +35,7 @@ const faqs = [
 function FAQItem({ question, answer, isOpen, onClick }) {
   return (
     <div
-      className="bg-surface rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
+      className="bg-surface rounded-xl border border-gray-200 overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
     >
       <button
         onClick={onClick}
