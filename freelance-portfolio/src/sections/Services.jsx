@@ -49,7 +49,7 @@ export default function Services() {
           {services.map((service, i) => (
             <div 
               key={service.title} 
-              className="reveal neo-card p-8 flex flex-col gap-6 hover:!shadow-neo-lg"
+              className="reveal neo-card p-8 flex flex-col gap-6"
               style={{ transitionDelay: `${i * 0.15}s` }}
             >
               {/* Icon */}

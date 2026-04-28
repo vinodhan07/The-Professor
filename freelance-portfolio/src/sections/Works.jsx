@@ -43,7 +43,7 @@ export default function Works() {
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className={`reveal neo-card border-l-[6px] ${project.accent} p-8 flex flex-col gap-4 hover:!shadow-neo-lg`}
+              className={`reveal neo-card border-l-[6px] ${project.accent} p-8 flex flex-col gap-4`}
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
               {/* Category Badge */}

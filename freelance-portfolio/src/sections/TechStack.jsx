@@ -43,6 +43,9 @@ export default function TechStack() {
               title={tech.name}
               className="w-8 h-8 flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300"
               loading="lazy"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
             />
           ))}
         </div>
