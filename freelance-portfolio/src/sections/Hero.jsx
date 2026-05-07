@@ -1,4 +1,4 @@
-import heroImg from '../assets/vinodhan.png';
+import heroImg from '../assets/vinodhan-nobg.webp';
 
 export default function Hero() {
   return (
@@ -37,12 +37,10 @@ export default function Hero() {
                 className="absolute rounded-[1.6rem] bg-gradient-to-br from-[#74C0FC] via-[#93d4fc] to-[#b3e0fd] border-border shadow-[3px_3px_0px_#000] flex items-end justify-center transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[3px] hover:-translate-y-[3px] cursor-pointer"
                 style={{ width: '270px', height: '290px', top: '30px', left: '15px' }}
               >
-                {/* Person image — contained INSIDE the blue card, no shadow */}
-                <img 
-                  src={heroImg} 
-                  alt="Vinodhan V.A" 
-                  className="w-full object-cover object-top rounded-b-[1.5rem]"
-                  style={{ height: '350px', marginTop: '-100px' }}
+                <img
+                  src={heroImg}
+                  alt="Vinodhan V.A"
+                  className="w-full h-full object-cover object-top rounded-[1.5rem]"
                 />
               </div>
                 
@@ -92,7 +90,7 @@ export default function Hero() {
 
       {/* Floating WhatsApp Button */}
       <a 
-        href="https://wa.me/919566697301" 
+        href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-[#25D366] border-2 border-border rounded-full shadow-[4px_4px_0px_#000] flex items-center justify-center transition-all duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:shadow-[8px_8px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px]"
